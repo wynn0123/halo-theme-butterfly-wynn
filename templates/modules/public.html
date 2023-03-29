@@ -129,8 +129,13 @@
         <span class="name flex-1">运行时间：</span>
         <span class="text run-day" th:data-runDay="${theme.config.base.site_birthday}">未配置建站时间</span>
       </p>
+	  
+	  <p class="item flex flex-align-items-center">
+        <span class="name flex-1">总访问量：</span>
+		<span class="text" th:text="${stats.visit} +' 人'"></span>
+      </p>
 
-      <p class="item flex flex-align-items-center">
+      <!--<p class="item flex flex-align-items-center">
         <span class="name flex-1">本站访客：</span>
         <span class="text" id="busuanzi_value_site_uv">加载中...</span>&nbsp;人
       </p>
@@ -138,7 +143,8 @@
       <p class="item flex flex-align-items-center">
         <span class="name flex-1">总访问量：</span>
         <span class="text" id="busuanzi_value_site_pv">加载中...</span>&nbsp;人
-      </p>
+      </p>-->
+	  
     </div>
 
   </section>
@@ -223,7 +229,7 @@
         </div>
       </div>
 
-      <div class="text text-clamp text-cmp2" th:text="${post.spec.excerpt.raw}"></div>
+      <div class="text text-clamp text-cmp2" th:text="${post.status.excerpt}"></div>
     </div>
   </li>
 </ul>

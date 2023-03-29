@@ -52,6 +52,12 @@
 
     <article th:utext="${singlePage.content.content}"
              th:class="'render-html animated fadeIn single_code_select '+${ theme.config.code.enable_line ? 'line-numbers' : ''} + ${ !theme.config.single.enable_h_title ? ' enable_h_title' : ''}"></article>
+	
+	<div class="post-comment" th:if="${pluginFinder.available('PluginCommentWidget')}">
+      <h3 class="mb-2 text-base font-medium text-gray-900 dark:text-slate-50">评论</h3>
+      <halo:comment colorScheme="window.dataTheme" group="content.halo.run" kind="SinglePage"
+                    th:attr="name=${singlePage.metadata.name}"/>
+    </div>
   </section>
 
   <th:block th:replace="~{modules/public:: aside}"></th:block>

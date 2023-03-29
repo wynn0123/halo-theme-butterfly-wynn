@@ -150,7 +150,6 @@
             <a th:each=" tag : ${post.tags}"
                class="link inline-block text-center"
                th:href="${tag.status.permalink}"
-               th:style="'--spec-color: ' + ${tag.spec.color}"
             >
               <i class="fa-regular fa-tags"></i>
               <span th:text="${tag.spec.displayName}" class="name"></span>
